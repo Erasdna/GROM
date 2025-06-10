@@ -19,6 +19,6 @@ The dataset used in this work is not made publicly available due to patient priv
 
 # Using this repo:
 
-The conda environment for running python code from this repo can be installed from `requirements.txt`. In addition, SVMTK (for meshing) can be installed following the instructions from [here](https://github.com/SVMTK/SVMTK) and ANTs (for registration) can be installed following the instructions from [here](https://github.com/ANTsX/ANTs). Scripts in the `meshing` folder use [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/). 
+The conda environment for running python code from this repo can be installed from `requirements.yml`. In addition, SVMTK (for meshing) can be installed following the instructions from [here](https://github.com/SVMTK/SVMTK) and ANTs (for registration) can be installed following the instructions from [here](https://github.com/ANTsX/ANTs). Scripts in the `meshing` folder use [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/). 
 
 The full pipeline in this repo may not be run in the current state without dataset access. However, we hope that sharing the code from this work may be useful for other, similar, projects.
