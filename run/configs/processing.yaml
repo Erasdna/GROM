@@ -1,0 +1,32 @@
+base: "/home/solheim/Documents/BrainTransfer/data"
+target_name: "Sub-005"
+
+# Where to find the warp
+warp:
+  path: "${base}/warps/warps_to_${target_name}_brainmask"
+  affine: "0GenericAffine.mat"
+  inverse_warp: "1InverseWarp.nii.gz"
+  warp: "1Warp.nii.gz"
+  warped: "Warped.nii.gz"
+
+# Info on the simulation folder
+simulation: 
+  problem: "threecomp"
+  path: "${base}/${.problem}/run"
+  target_resolution: "128" 
+  original_resolution: "128" 
+
+# Info on where to find MRI data
+image:
+  path: "${base}/source"
+  #simulation: "${.path}/${target_name}"
+
+# Target brain which other brains will be warped to
+target:
+  simulation: "${simulation.path}/${target_name}/${simulation.target_resolution}/${target_name}-states.bp"
+  image: "${image.path}/${target_name}/${target_name}_brainmask.mgz" 
+
+# Where to save
+saving: 
+  path: "${base}/${simulation.problem}/run_warped/run_warped_to_${target_name}/target_${simulation.target_resolution}_original_${simulation.original_resolution}"
+  h5_file: "${.path}/data.h5"

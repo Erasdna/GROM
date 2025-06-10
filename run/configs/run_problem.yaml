@@ -1,0 +1,41 @@
+verbose: True
+problem: "threecomp" # Else Poisson
+base: "/home/solheim/Documents/BrainTransfer/data"
+
+brainmask: 
+  folder: "${base}/source/${.name}"
+  name: "Sub-125"
+  file: "${.folder}/${.name}_brainmask.mgz"
+
+save_folder: "${base}/${problem}"
+solve:
+  folder: "${save_folder}/run/${brainmask.name}/${mesh.mesh_config.mesh.resolution}/"
+  save_state: "${brainmask.name}-states.bp"
+  img: "${brainmask.name}-img"
+  plotting:
+    save_plotting: True
+    plot: "${brainmask.name}-plot"
+
+mesh:
+  mesh_config:
+    brain:
+      folder: "${brainmask.folder}"
+      pial:
+        rh: "${..folder}/${brainmask.name}_rh.stl"
+        lh: "${..folder}/${brainmask.name}_lh.stl"
+        use_full: True
+        pial: "${..folder}/${brainmask.name}_pial.stl"
+      ventricles: "${.folder}/${brainmask.name}_ventricles.stl"
+
+    mesh:
+      resolution: 128
+      remesh: True
+      read_mesh: ${solve.folder}/${solve.save_state}
+
+    save:
+      path: "${base}/meshes/${brainmask.name}/${mesh.mesh_config.mesh.resolution}/"
+      filename: "mesh"
+      file: ${.path}/${.filename}
+      tmp: ${.file}.mesh
+      xdmf: ${.file}.xdmf
+      facets: ${.file}_facets.xdmf
