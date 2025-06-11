@@ -1,4 +1,4 @@
-base: "/home/solheim/Documents/BrainTransfer/data"
+base: ""
 target_name: "Sub-005"
 
 # Where to find the warp
