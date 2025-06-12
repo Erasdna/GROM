@@ -2,7 +2,7 @@
 
 Code for the paper **"Geometry Reduced Order Modeling (GROM) with application to modeling of glymphatic function"** 
 
-Preprint available from:<br> 
+Preprint available from: http://arxiv.org/abs/2506.09442 <br> 
 Work pending review
 
 **Abstract**: 
